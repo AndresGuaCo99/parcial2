@@ -1,7 +1,8 @@
 package com.example.equipo_futbol.Service;
 
-import com.example.equipo_futbol.Model.Entrenador;
-import com.example.equipo_futbol.Repository.EntrenadorRepository;
+
+import com.example.equipo_futbol.Model.Partido;
+import com.example.equipo_futbol.Repository.PartidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,25 +12,42 @@ import java.util.*;
 public class PartidoService {
 
     @Autowired
-    private EntrenadorRepository entrenadorRepository;
+    private PartidoRepository partidoRepository;
 
-    //buscar
-    public List<Entrenador> findAll() {
-        return entrenadorRepository.findAll();
+    public List<Partido> getAllPartidos() {
+        return partidoRepository.findAll();
     }
 
-    //buscar por id
-    public Optional<Entrenador> findById(Integer id) {
-        return entrenadorRepository.findById(id);
+    public Optional<Partido> getPartidoById(Integer id) {
+        return partidoRepository.findById(id);
     }
 
-    //Guardar
-    public Entrenador save(Entrenador entrenador) {
-        return entrenadorRepository.save(entrenador);
+    public Partido createPartido(Partido partido) {
+        return partidoRepository.save(partido);
     }
 
-//borrar
-    public void deleteById(Integer id) {
-        entrenadorRepository.deleteById(id);
+    public Partido updatePartido(Integer id, Partido datos) {
+        return partidoRepository.findById(id)
+                .map(p -> {
+                    p.setFecha(datos.getFecha());
+                    p.setEstadio(datos.getEstadio());
+                    p.setEquipoLocal(datos.getEquipoLocal());
+                    p.setEquipoVisita(datos.getEquipoVisita());
+                    p.setGolesLocal(datos.getGolesLocal());
+                    p.setGolesVisita(datos.getGolesVisita());
+                    return partidoRepository.save(p);
+                }).orElseThrow(() -> new RuntimeException("Partido no encontrado"));
+    }
+
+    public void deletePartido(Integer id) {
+        partidoRepository.deleteById(id);
+    }
+
+    public Integer totalGolesPorEquipo(Integer equipoId) {
+        return partidoRepository.totalGolesPorEquipo(equipoId);
+    }
+
+    public List<Map<String, Object>> resultadosDePartidos() {
+        return partidoRepository.findResultadosDePartidos();
     }
 }

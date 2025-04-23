@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "43e31102-6c48-4a8b-b03b-8073524cb95b",
+		"name": "localhost:8080",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30944750"
+	},
+	"item": [
+		{
+			"name": "/api/estadisticasjugador",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2025-04-12\",\r\n    \"cliente\": {\r\n      \"idCliente\": 2,\r\n      \"nombre\": \"Camila Torres\",\r\n      \"cedula\": \"10234567891\",\r\n      \"telefono\": \"3102345678\",\r\n      \"correo\": \"camila.torres@email.com\"\r\n    },\r\n    \"empleado\": {\r\n      \"idEmpleado\": 4,\r\n      \"nombre\": \"Diana Rodríguez\",\r\n      \"cargo\": \"Supervisora de ventas\",\r\n      \"telefono\": \"3109876543\"\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estadisticasjugador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estadisticasjugador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/equipos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2025-04-12\",\r\n    \"cliente\": {\r\n      \"idCliente\": 2,\r\n      \"nombre\": \"Camila Torres\",\r\n      \"cedula\": \"10234567891\",\r\n      \"telefono\": \"3102345678\",\r\n      \"correo\": \"camila.torres@email.com\"\r\n    },\r\n    \"empleado\": {\r\n      \"idEmpleado\": 4,\r\n      \"nombre\": \"Diana Rodríguez\",\r\n      \"cargo\": \"Supervisora de ventas\",\r\n      \"telefono\": \"3109876543\"\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/equipos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"equipos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/jugadores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Nombre del Equipo\",\n    \"ciudad\": \"Ciudad del Equipo\",\n    \"fechaFundacion\": \"2020-12-24\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/jugadores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/entrenadores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Nombre del Equipo\",\n    \"ciudad\": \"Ciudad del Equipo\",\n    \"fechaFundacion\": \"2020-12-24\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/entrenadores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"entrenadores"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
